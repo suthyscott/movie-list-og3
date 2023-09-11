@@ -1,20 +1,20 @@
-import { useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import axios from 'axios'
+import { useState } from "react"
+import "./App.css"
+import Header from "./Elements/Header"
+import Home from "./Pages/Home"
+import Form from "./Pages/Form"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
-
-  useEffect(() => {
-    axios.post('/movies', {movieName: 'Logan', imgUrl: 'asdf'})
-      .then(res => console.log(res))
-  }, [])
-  return (
-    <>
-      
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/addMovie" element={<Form/>} />
+            </Routes>
+        </>
+    )
 }
 
 export default App

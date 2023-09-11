@@ -4,7 +4,7 @@ export default {
     addMovie: async (req, res) => {
         try {
             console.log("hit addMovie")
-                                       const {movieName, imgUrl} = req.body
+            const {movieName, imgUrl} = req.body
             let newMovie = await Movie.create({movieName, imgUrl})
             res.send(newMovie)
         } catch (err) {

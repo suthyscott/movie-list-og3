@@ -9,9 +9,9 @@ const PORT = 4545
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-app.get('/movies')
-app.post('/movies', addMovie)
-app.put('/movies')
-app.delete('/movies')
+app.get('/api/movies')
+app.post('/api/movies', addMovie)
+app.put('/api/movies')
+app.delete('/api/movies')
 
 ViteExpress.listen(app, PORT, () => console.log(`Take us to warp ${PORT}`))
