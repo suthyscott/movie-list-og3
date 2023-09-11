@@ -7,7 +7,10 @@
     "dev": "nodemon server/index.js -w server/index.js -w src",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "seed": "node --no-warnings server/seed.js",
+    "createdb": "dropdb --if-exists movie-list && createdb movie-list",
+    "initdb": "npm run createdb && npm run seed"
   },
   "dependencies": {
     "axios": "^1.5.0",
