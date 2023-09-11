@@ -11,5 +11,14 @@ export default {
             console.log(err)
             res.sendStatus(500).send("Something aint right")
         }
+    },
+    getAllMovies: async (req, res) => {
+        try {
+            const movies = await Movie.findAll()
+            res.status(200).send(movies)
+        } catch(theseHands){
+            console.log(theseHands)
+            res.sendStatus(500)
+        }
     }
 }
