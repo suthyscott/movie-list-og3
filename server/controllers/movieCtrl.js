@@ -1,4 +1,4 @@
-import { Movie } from "./model.js"
+import { Movie } from "../model.js"
 
 export default {
     addMovie: async (req, res) => {
