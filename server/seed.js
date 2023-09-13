@@ -1,5 +1,6 @@
 import connectToDB from "./db.js";
 import {Movie, User} from './model.js'
+import bcrypt from 'bcryptjs'
 
 const db = await connectToDB('postgresql:///movie-list')
 
@@ -17,7 +18,9 @@ const movieData = [
 ]
 
 await db.sync({force: true}).then(async () =>{
-    await User.create({username: 'scott', hashedPass: 'scott'})
+    const salt = bcrypt.genSaltSync(10)
+    const hash = bcrypt.hashSync('scott', salt)
+    await User.create({username: 'scott', hashedPass: hash})
     const newMovies = await Movie.bulkCreate(movieData)
     console.log('db reset and seeded')
 })
