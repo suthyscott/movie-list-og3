@@ -11,6 +11,8 @@ const Home = () => {
 
   useEffect(getAllMoviesFromBackend, [])
   
+
+  // Add a .map to display movies
   return (
     <div>Home</div>
   )
