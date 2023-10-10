@@ -14,7 +14,10 @@ export default {
     },
     getAllMovies: async (req, res) => {
         try {
-            const movies = await Movie.findAll()
+            const movies = await Movie.findAll({
+                order: [['movieId', "DESC"]]
+            })
+            console.log(movies)
             res.status(200).send(movies)
         } catch(theseHands){
             console.log(theseHands)

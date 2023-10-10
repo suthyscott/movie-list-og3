@@ -2,7 +2,8 @@ import connectToDB from "./db.js";
 import {Movie, User} from './model.js'
 import bcrypt from 'bcryptjs'
 
-const db = await connectToDB('postgresql:///movie-list')
+// const db = await connectToDB('postgresql:///movie-list')
+const db = await connectToDB('postgres://suthyscott:V5crhisbL7Nt@ep-damp-resonance-431578.us-west-2.aws.neon.tech/neondb')
 
 const movieData = [
     {
